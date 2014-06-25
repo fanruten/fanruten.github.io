@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>iOS Dev</title>
+  <title>Category: Xcode - iOS Dev</title>
   <meta name="author" content="Gumenniy Ruslan">
 
   
-  <meta name="description" content="Если попытаться собрать приложение с такой конфигурацией, то будет ошбика: 1
-CodeSign error: code signing is required for product type 'Application &hellip;">
+  <meta name="description" content="Category: xcode">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ CodeSign error: code signing is required for product type 'Application &hellip;"
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://fanruten.github.io">
+  <link rel="canonical" href="http://fanruten.github.io/blog/categories/xcode">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="iOS Dev" type="application/atom+xml">
@@ -65,91 +64,48 @@ CodeSign error: code signing is required for product type 'Application &hellip;"
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article role="article">
   
-  
-  
-    <article>
-      
   <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/26/build-without-codesign/">Билд без Codesign</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-26T00:58:41+04:00" pubdate data-updated="true">Jun 26<sup>th</sup>, 2014</time>
-        
-           | <a href="/blog/2014/06/26/build-without-codesign/#disqus_thread"
-             data-disqus-identifier="http://fanruten.github.io/blog/2014/06/26/build-without-codesign/">Comments</a>
-        
-      </p>
+    <h1 class="entry-title">Category: Xcode</h1>
     
   </header>
+  
+  <div id="blog-archives" class="category">
 
 
-  <div class="entry-content"><p><img class="center" src="images/2014-06-26-build-without-codesign/1.png" width="600"></p>
 
-<p>Если попытаться собрать приложение с такой конфигурацией, то будет ошбика:</p>
+  
+  <h2>2014</h2>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>CodeSign error: code signing is required for product type 'Application'  </span></code></pre></td></tr></table></div></figure>
+<article>
+  
+<h1><a href="/blog/2014/06/26/build-without-codesign/">Билд без Codesign</a></h1>
+<time datetime="2014-06-26T00:58:41+04:00" pubdate><span class='month'>Jun</span> <span class='day'>26</span> <span class='year'>2014</span></time>
 
-
-<p>Чтобы xCode собирал билды без подписи, надо открыть один из следующих файлов в зависимости от Deployment Target:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/SDKSettings.plist  
-</span><span class='line'>/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/SDKSettings.plist  
-</span><span class='line'>/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/SDKSettings.plist  
-</span><span class='line'>/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/SDKSettings.plist  </span></code></pre></td></tr></table></div></figure>
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/codesign/'>codesign</a>, <a class='category' href='/blog/categories/xcode/'>xcode</a></span>
+</footer>
 
 
-<p>И поставить ключ CODE_SIGNING_REQUIRED в NO.</p>
+</article>
 
-<p><img class="center" src="images/2014-06-26-build-without-codesign/2.png"></p>
+</div>
 
-<p>Теперь можно собрать бинарник для которого команда &ldquo;codesign &mdash;display &mdash;verbose=4 SomeApp&rdquo; выведет:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>SomeApp: code object is not signed at all  </span></code></pre></td></tr></table></div></figure>
-
+  
+</article>
 
 
 </div>
-  
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/fanruten">@fanruten</a> on GitHub
@@ -179,6 +135,7 @@ CodeSign error: code signing is required for product type 'Application &hellip;"
 
   
 </aside>
+
 
     </div>
   </div>
