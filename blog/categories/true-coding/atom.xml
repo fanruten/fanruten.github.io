@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: True Coding | iOS Dev]]></title>
+  <link href="http://fanruten.github.io/blog/categories/true-coding/atom.xml" rel="self"/>
+  <link href="http://fanruten.github.io/"/>
+  <updated>2014-06-26T02:33:31+04:00</updated>
+  <id>http://fanruten.github.io/</id>
+  <author>
+    <name><![CDATA[Gumenniy Ruslan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Правильный KVO]]></title>
+    <link href="http://fanruten.github.io/blog/2014/06/26/true-kvo/"/>
+    <updated>2014-06-26T02:17:07+04:00</updated>
+    <id>http://fanruten.github.io/blog/2014/06/26/true-kvo</id>
+    <content type="html"><![CDATA[<p>Для реализации KVO, объект должен реализовать неформальный протокол NSKeyValueObserving. NSObject уже предоставляет реализацию этого протокола,  поэтому разработчику нужно лишь грамотно использовать готовый механизм.</p>
+
+<p>Вроде как в KVO нет ничего сложного.</p>
+
+<p>Чтобы подписаться надо вызвать:
+<code>objective-c
+- (void)addObserver:(NSObject *)anObserver forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context  
+</code>
+Чтобы отписаться:
+<code>objective-c
+- (void)removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath context:(void *)context  
+</code>
+Ну и остается только правильно реализовать метод в который приходят уведомления:
+<code>objective-c
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context  
+</code>
+Большинство разработчиков умеют правильно подписываться/отписываться, но с observeValueForKeyPath еще возникают проблемы. Вот примеры неправильной реалзиции этого метода из реальных проектов:
+``` objective-c
+&ndash; (void)observeValueForKeyPath:(NSString <em>)keyPath ofObject:(id)object change:(NSDictionary </em>)change context:(void <em>)context<br/>
+{<br/>
+  if (context != (__bridge void </em>)kActionLoadingStateObservationContext)</p>
+
+<pre><code>return;  
+</code></pre>
+
+<p>  NSUInteger index = [self.actions indexOfObject:object];<br/>
+  NSAssert(index != NSNotFound, @&ldquo;Can not found action %@ in the current actions&rdquo;, object);<br/>
+  // update loading state<br/>
+  YMTAction <em>action = self.actions[index];<br/>
+  YMTActionView </em>actionView = self.subviews[index];<br/>
+  actionView.loading = action.loading;<br/>
+}</p>
+
+<ul>
+<li><p>(void)observeValueForKeyPath:(NSString <em>)keyPath ofObject:(id)object change:(NSDictionary </em>)change context:(void *)context<br/>
+{<br/>
+if (object == self.webView.scrollView &amp;&amp; [keyPath isEqualToString:@&ldquo;contentSize&rdquo;]) {<br/>
+  self.webViewHeightConstraint.constant = [change[NSKeyValueChangeNewKey] CGSizeValue].height;<br/>
+}<br/>
+}</p></li>
+<li><p>(void)observeValueForKeyPath:(NSString <em>)keyPath ofObject:(id)object change:(NSDictionary </em>)change context:(void *)context {<br/>
+if ([keyPath isEqual:@keypath(YRCachedSettings.new, selectedSuburbanZone)]) {<br/>
+  [self zoneDidChange];<br/>
+}<br/>
+}</p></li>
+<li><p>(void)observeValueForKeyPath:(NSString <em>)keyPath ofObject:(id)object change:(NSDictionary </em>)change context:(void *)context<br/>
+{<br/>
+[self reloadData];<br/>
+}<br/>
+```
+Главная проблема у всех показанных реализаций, это отсутствие вызова [super observeValueForKeyPath:keyPath:change:context:]. Многие забывают о том, что базовый класс тоже может использовать KVO. Порой даже не забывают, а сознательно опускают вызов метода, так как, когда наткнулись на то, что базовы класс кинул NSInternalInconsistencyException.</p></li>
+</ul>
+
+
+<p>Собсвтенно, чтобы не было проблем с базовым классом, [super observeValueForKeyPath:keyPath:change:context:] надо вызвать не при каждом уведомление, а только при тех, на которые вы не подписывались. Чтобы отличить свои уведомления от чужих (принадлежащих базовому классу) надо использовать контекст.</p>
+
+<p>Вот пример правильного observeValueForKeyPath:
+``` objective-c
+ &ndash; (void)observeValueForKeyPath:(NSString <em>)keyPath ofObject:(id)object change:(__unused NSDictionary </em>)change context:(void *)context {<br/>
+   if (context == &amp;ja_kvoContext) {</p>
+
+<pre><code> if ([keyPath isEqualToString:@"view"]) {  
+   if (self.centerPanel.isViewLoaded &amp;&amp; self.recognizesPanGesture) {  
+     [self _addPanGestureToView:self.centerPanel.view];  
+   }  
+ } else if ([keyPath isEqualToString:@"viewControllers"] &amp;&amp; object == self.centerPanel) {  
+   // view controllers have changed, need to replace the button  
+   [self _placeButtonForLeftPanel];  
+ }  
+</code></pre>
+
+<p>   } else {</p>
+
+<pre><code> [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];  
+</code></pre>
+
+<p>   }<br/>
+ }<br/>
+```</p>
+]]></content>
+  </entry>
+  
+</feed>
