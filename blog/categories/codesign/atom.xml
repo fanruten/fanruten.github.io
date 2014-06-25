@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Codesign | iOS Dev]]></title>
   <link href="http://fanruten.github.io/blog/categories/codesign/atom.xml" rel="self"/>
   <link href="http://fanruten.github.io/"/>
-  <updated>2014-06-26T01:52:16+04:00</updated>
+  <updated>2014-06-26T01:57:40+04:00</updated>
   <id>http://fanruten.github.io/</id>
   <author>
     <name><![CDATA[Gumenniy Ruslan]]></name>
@@ -18,7 +18,7 @@
     <link href="http://fanruten.github.io/blog/2014/06/26/build-without-codesign/"/>
     <updated>2014-06-26T00:58:41+04:00</updated>
     <id>http://fanruten.github.io/blog/2014/06/26/build-without-codesign</id>
-    <content type="html"><![CDATA[<p><img class="center" src="images/2014-06-26-build-without-codesign/1.png" width="600"></p>
+    <content type="html"><![CDATA[<p><img class="center" src="/images/2014-06-26-build-without-codesign/1.png" width="600"></p>
 
 <p>Если попытаться собрать приложение с такой конфигурацией, то будет ошбика:
 <code>
@@ -33,7 +33,7 @@ CodeSign error: code signing is required for product type 'Application'
 </code>
 И поставить ключ CODE_SIGNING_REQUIRED в NO.</p>
 
-<p><img class="center" src="images/2014-06-26-build-without-codesign/2.png"></p>
+<p><img class="center" src="/images/2014-06-26-build-without-codesign/2.png"></p>
 
 <p>Теперь можно собрать бинарник для которого команда &ldquo;codesign &mdash;display &mdash;verbose=4 SomeApp&rdquo; выведет:
 <code>
