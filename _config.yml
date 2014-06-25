@@ -3,9 +3,9 @@
 # ----------------------- #
 
 url: http://fanruten.github.io
-title: My Octopress Blog
+title: iOS Dev 
 subtitle: A blogging framework for hackers.
-author: Your Name
+author: Gumenniy Ruslan
 simple_search: https://www.google.com/search
 description:
 
@@ -79,8 +79,8 @@ google_plus_one_size: medium
 
 # Google Plus Profile
 # Hidden: No visible button, just add author information to search results
-googleplus_user:
-googleplus_hidden: false
+googleplus_user: fanruten@gmail.com
+googleplus_hidden: true
 
 # Pinboard
 pinboard_user:
@@ -91,11 +91,11 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
-disqus_show_comment_count: false
+disqus_short_name: fanruten-ios
+disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id:
 
 # Facebook Like
-facebook_like: false
+facebook_like: true
