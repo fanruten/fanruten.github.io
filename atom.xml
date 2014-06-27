@@ -4,7 +4,7 @@
   <title><![CDATA[iOS Dev]]></title>
   <link href="http://fanruten.github.io/atom.xml" rel="self"/>
   <link href="http://fanruten.github.io/"/>
-  <updated>2014-06-27T17:34:58+04:00</updated>
+  <updated>2014-06-28T01:21:22+04:00</updated>
   <id>http://fanruten.github.io/</id>
   <author>
     <name><![CDATA[Гуменный Руслан]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Полезные шорткаты для iTerm2]]></title>
+    <link href="http://fanruten.github.io/blog/2014/06/27/iterm-shortcuts/"/>
+    <updated>2014-06-27T18:49:51+04:00</updated>
+    <id>http://fanruten.github.io/blog/2014/06/27/iterm-shortcuts</id>
+    <content type="html"><![CDATA[<p>Очистить строку ввода можно нажатием Ctrl+U. Вернуть удаленный текст обратно Ctrl+Y.</p>
+
+<p>Чтобы добавить навигацию по строке, надо открыть настройки и добавить ярлыки с Action равным Send Escape Sequence.</p>
+
+<p><img class="center {{ site.url" src="}}/images/2014-06-27-iterm-shortcuts/1.png" width="600"></p>
+
+<p>Переход в начало строки:</p>
+
+<pre><code>Keyboard Shortcut: ⌘←
+Esc+: [H
+</code></pre>
+
+<p>Переход в конец строки:</p>
+
+<pre><code>Keyboard Shortcut: ⌘→
+Esc+: [F
+</code></pre>
+
+<p>Переход в начало строки:</p>
+
+<pre><code>Keyboard Shortcut: ⌥←
+Esc+: b
+</code></pre>
+
+<p>Переход в начало строки:</p>
+
+<pre><code>Keyboard Shortcut: ⌥→  
+Esc+: f
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Правильный KVO]]></title>
