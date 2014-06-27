@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Xcode | iOS Dev]]></title>
+  <title><![CDATA[Category: xcode | iOS Dev]]></title>
   <link href="http://fanruten.github.io/blog/categories/xcode/atom.xml" rel="self"/>
   <link href="http://fanruten.github.io/"/>
-  <updated>2014-06-26T02:33:31+04:00</updated>
+  <updated>2014-06-27T17:34:58+04:00</updated>
   <id>http://fanruten.github.io/</id>
   <author>
-    <name><![CDATA[Gumenniy Ruslan]]></name>
+    <name><![CDATA[Гуменный Руслан]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[Билд без Codesign]]></title>
+    <title type="html"><![CDATA[Билд без codesign]]></title>
     <link href="http://fanruten.github.io/blog/2014/06/26/build-without-codesign/"/>
     <updated>2014-06-26T00:58:41+04:00</updated>
     <id>http://fanruten.github.io/blog/2014/06/26/build-without-codesign</id>

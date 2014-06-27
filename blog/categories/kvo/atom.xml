@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Kvo | iOS Dev]]></title>
+  <title><![CDATA[Category: kvo | iOS Dev]]></title>
   <link href="http://fanruten.github.io/blog/categories/kvo/atom.xml" rel="self"/>
   <link href="http://fanruten.github.io/"/>
-  <updated>2014-06-26T02:33:31+04:00</updated>
+  <updated>2014-06-27T17:34:58+04:00</updated>
   <id>http://fanruten.github.io/</id>
   <author>
-    <name><![CDATA[Gumenniy Ruslan]]></name>
+    <name><![CDATA[Гуменный Руслан]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>

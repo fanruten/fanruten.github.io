@@ -5,8 +5,8 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Билд без Codesign - iOS Dev</title>
-  <meta name="author" content="Gumenniy Ruslan">
+  <title>Билд без codesign - iOS Dev</title>
+  <meta name="author" content="Гуменный Руслан">
 
   
   <meta name="description" content="Если попытаться собрать приложение с такой конфигурацией, то будет ошбика: 1
@@ -19,49 +19,44 @@ CodeSign error: code signing is required for product type 'Application &hellip;"
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://fanruten.github.io/blog/2014/06/26/build-without-codesign">
+  <link rel="canonical" href="http://fanruten.github.io/blog/2014/06/26/build-without-codesign/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="iOS Dev" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="iOS Dev" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
   
 
 </head>
 
-<body   class="collapse-sidebar sidebar-footer" >
-  <header role="banner"><hgroup>
-  <h1><a href="/">iOS Dev</a></h1>
-  
-    <h2>A blogging framework for hackers.</h2>
-  
-</hgroup>
-
-</header>
+<body   >
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
   <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
 </ul>
   
-  
-  
-  
 <form action="https://www.google.com/search" method="get">
   <fieldset role="search">
     <input type="hidden" name="q" value="site:fanruten.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+    <input class="search" type="text" name="q" results="0" placeholder="Поиск"/>
   </fieldset>
 </form>
   
 <ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
+    <li><a href="/">
+        <span class="blue_light">
+            iOS Dev
+        </span>
+       
+    </a></li>
+  <li><a href="/">Блог</a></li>
+  <li><a href="/blog/archives">Архив</a></li>
+  <li><a href="/about">Обо мне</a></li>
 </ul>
 
 </nav>
@@ -88,10 +83,9 @@ CodeSign error: code signing is required for product type 'Application &hellip;"
   
 
 
-<time datetime="2014-06-26T00:58:41+04:00" pubdate data-updated="true">Jun 26<sup>th</sup>, 2014</time>
+<time datetime="2014-06-26T00:58:41+04:00" pubdate data-updated="true">Чт, 26 июня 2014</time>
         
-           | <a href="#disqus_thread"
-             data-disqus-identifier="http://fanruten.github.io">Comments</a>
+         | <a href="#disqus_thread">Комментарии</a>
         
       </p>
     
@@ -137,7 +131,7 @@ CodeSign error: code signing is required for product type 'Application &hellip;"
       
   
 
-<span class="byline author vcard">Authored by <span class="fn">Gumenniy Ruslan</span></span>
+<span class="byline author vcard">Опубликовал <span class="fn">Гуменный Руслан</span></span>
 
       
 
@@ -151,7 +145,7 @@ CodeSign error: code signing is required for product type 'Application &hellip;"
   
 
 
-<time datetime="2014-06-26T00:58:41+04:00" pubdate data-updated="true">Jun 26<sup>th</sup>, 2014</time>
+<time datetime="2014-06-26T00:58:41+04:00" pubdate data-updated="true">Чт, 26 июня 2014</time>
       
 
 <span class="categories">
@@ -165,11 +159,9 @@ CodeSign error: code signing is required for product type 'Application &hellip;"
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fanruten.github.io/blog/2014/06/26/build-without-codesign/" data-via="" data-counturl="http://fanruten.github.io/blog/2014/06/26/build-without-codesign/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://fanruten.github.io/blog/2014/06/26/build-without-codesign/" data-via="" data-counturl="http://fanruten.github.io/blog/2014/06/26/build-without-codesign/" >Tweet</a>
   
   
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
   
 </div>
 
@@ -184,44 +176,39 @@ CodeSign error: code signing is required for product type 'Application &hellip;"
 </article>
 
   <section>
-    <h1>Comments</h1>
+    <h1>Комментарии</h1>
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
   </section>
-
 
 </div>
 
 <aside class="sidebar">
   
+    <section>
+  <h1>Последние посты</h1>
+  <ul id="recent_posts">
     
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
+      <li class="post">
+        <a href="/blog/2014/06/26/true-kvo/">Правильный KVO</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/26/build-without-codesign/">Билд без codesign</a>
+      </li>
+    
   </ul>
-  
-  <a href="https://github.com/fanruten">@fanruten</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
+</section>
 
-        github.showRepos({
-            user: 'fanruten',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/fanruten@gmail.com?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
 </section>
 
 
@@ -233,8 +220,8 @@ CodeSign error: code signing is required for product type 'Application &hellip;"
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Gumenniy Ruslan -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> | Themed with <a href="https://github.com/lucaslew/whitespace">Whitespace</a></span>
+  Copyright &copy; 2014 - Гуменный Руслан -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
@@ -251,24 +238,12 @@ CodeSign error: code signing is required for product type 'Application &hellip;"
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
 
 
-
-
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
@@ -279,7 +254,7 @@ CodeSign error: code signing is required for product type 'Application &hellip;"
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>
