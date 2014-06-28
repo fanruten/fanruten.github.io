@@ -4,7 +4,7 @@
   <title><![CDATA[iOS Dev]]></title>
   <link href="http://fanruten.github.io/atom.xml" rel="self"/>
   <link href="http://fanruten.github.io/"/>
-  <updated>2014-06-29T02:09:22+04:00</updated>
+  <updated>2014-06-29T02:27:53+04:00</updated>
   <id>http://fanruten.github.io/</id>
   <author>
     <name><![CDATA[Гуменный Руслан]]></name>
@@ -19,14 +19,14 @@
     <updated>2014-06-29T00:46:05+04:00</updated>
     <id>http://fanruten.github.io/blog/2014/06/29/private-for-debugging</id>
     <content type="html"><![CDATA[<p>Наверняка уже все знают, что у UIView есть полезный метод recursiveDescription.
-Вызов котрого, вернет строку с описанием всей иерархии вью.</p>
+Вызов которого, вернет строку с описанием всей иерархии вью.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(gdb) po [[self view] recursiveDescription]
+</pre></td><td class='code'><pre><code class=''><span class='line'>(lldb) po [[self view] recursiveDescription]
 </span><span class='line'>&lt;UIView: 0x6a107c0; frame = (0 20; 320 460); autoresize = W+H; layer = […]
 </span><span class='line'>   | &lt;UIRoundedRectButton: 0x6a103e0; frame = (124 196; 72 37); opaque = NO; […]
 </span><span class='line'>   |    | &lt;UIButtonLabel: 0x6a117b0; frame = (19 8; 34 21); text = 'Test'; […]
@@ -34,7 +34,7 @@
 
 
 <p>Еще, многие знают, что при помощи рантайма, можно получить список переменных/методов/свойств/протоколов/&hellip; класса. И обычно для этих целей пишут вспомогательный код. Но оказывается, все уже давно написано сотрудниками Apple.
-В UIKit реализована категория с именем IvarDescription.</p>
+В UIKit.framework реализована категория с именем IvarDescription.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -53,7 +53,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Названия метдов говорят за себя. Но давайте посмотрим, что же они возвращают для объекта UIApplication.</p>
+<p>Названия метдов говорят за себя. Но давайте посмотрим, что же они возвращают.</p>
 
 <!-- more -->
 
@@ -301,7 +301,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>__methodDescriptionForClass &ndash; список методов реализованные в конкретном классе, без учета базовых классов</p>
+<p>__methodDescriptionForClass &ndash; список методов реализованных в конкретном классе, без учета базовых классов</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -470,7 +470,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>_shortMethodDescription (если грубо, то вызывает [self _shortMethodDescription:[self class]])</p>
+<p>_shortMethodDescription (если грубо, то вызывает [self __methodDescriptionForClass:[self class]])</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
