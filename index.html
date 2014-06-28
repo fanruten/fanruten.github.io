@@ -9,7 +9,12 @@
   <meta name="author" content="Гуменный Руслан">
 
   
-  <meta name="description" content="Очистить строку ввода можно нажатием Ctrl+U. Вернуть удаленный текст обратно Ctrl+Y. Чтобы добавить навигацию по строке, надо открыть настройки и &hellip;">
+  <meta name="description" content="Наверняка уже все знают, что у UIView есть полезный метод recursiveDescription.
+Вызов котрого, вернет строку с описанием всей иерархии вью. 1
+2
+3
+4
+5 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +80,84 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/29/private-for-debugging/">Приватные методы для отладки</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-29T00:46:05+04:00" pubdate data-updated="true">Вс, 29 июня 2014</time>
+        
+         | <a href="/blog/2014/06/29/private-for-debugging/#disqus_thread">Комментарии</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Наверняка уже все знают, что у UIView есть полезный метод recursiveDescription.
+Вызов котрого, вернет строку с описанием всей иерархии вью.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(gdb) po [[self view] recursiveDescription]
+</span><span class='line'>&lt;UIView: 0x6a107c0; frame = (0 20; 320 460); autoresize = W+H; layer = […]
+</span><span class='line'>   | &lt;UIRoundedRectButton: 0x6a103e0; frame = (124 196; 72 37); opaque = NO; […]
+</span><span class='line'>   |    | &lt;UIButtonLabel: 0x6a117b0; frame = (19 8; 34 21); text = 'Test'; […]
+</span><span class='line'>   .....</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Еще, многие знают, что при помощи рантайма, можно получить список переменных/методов/свойств/протоколов/&hellip; класса. И обычно для этих целей пишут вспомогательный код. Но оказывается, все уже давно написано сотрудниками Apple.
+В UIKit реализована категория с именем IvarDescription.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">@interface</span> <span class="nc">NSObject</span> <span class="nl">(IvarDescription)</span>
+</span><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">_shortMethodDescription</span><span class="p">;</span>
+</span><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">_methodDescription</span><span class="p">;</span>
+</span><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">__methodDescriptionForClass:</span><span class="p">(</span><span class="kt">Class</span><span class="p">)</span><span class="nv">arg1</span><span class="p">;</span>
+</span><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">_ivarDescription</span><span class="p">;</span>
+</span><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">__ivarDescriptionForClass:</span><span class="p">(</span><span class="kt">Class</span><span class="p">)</span><span class="nv">arg1</span><span class="p">;</span>
+</span><span class='line'><span class="k">@end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Названия метдов говорят за себя. Но давайте посмотрим, что же они возвращают для объекта UIApplication.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/06/29/private-for-debugging/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -382,6 +465,10 @@ Esc+: f
     <section>
   <h1>Последние посты</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/06/29/private-for-debugging/">Приватные методы для отладки</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/06/27/iterm-shortcuts/">Полезные шорткаты для iTerm2</a>
