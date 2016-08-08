@@ -1,0 +1,16 @@
+{
+	"applinks": {
+		"apps": [],
+		"details": [{
+			"appID": "6NE3U3D2HE.ru.AutoRu",
+			"paths": [
+				"/add",
+				"/*/add",
+				"/cars/used/sale/*",
+				"/cars/new/sale/*",
+				"/*/cars/used/sale/*",
+				"/*/cars/new/sale/*"
+			]
+		}]
+	}
+}
