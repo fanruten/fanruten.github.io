@@ -1,15 +1,29 @@
 {
+	"activitycontinuation": {
+		"apps": [
+			"6NE3U3D2HE.ru.AutoRu"
+		]
+	},
+	"webcredentials": {
+		"apps": ["6NE3U3D2HE.ru.AutoRu"]
+	},
 	"applinks": {
 		"apps": [],
 		"details": [{
 			"appID": "6NE3U3D2HE.ru.AutoRu",
 			"paths": [
-				"/add",
-				"/*/add",
+				"/add/*",
+				"NOT /*/reviews/add",
+				"NOT /*/reviews/edit",
+				"/*/add/*",
 				"/cars/used/sale/*",
 				"/cars/new/sale/*",
 				"/*/cars/used/sale/*",
-				"/*/cars/new/sale/*"
+				"/*/cars/new/sale/*",
+				"/*/cars/*/",
+				"/cars/*/",
+				"/catalog/cars/",
+				"/catalog/cars/*"
 			]
 		}]
 	}
