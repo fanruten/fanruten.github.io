@@ -1,0 +1,28 @@
+{
+	"webcredentials": {
+		"apps": [
+			"7S8JXSF9K6.com.walli.shop",
+			"7S8JXSF9K6.com.walli.shop.apothecarium",
+			"AD4A5PPWYJ.com.terrascend.shop.web"
+		]
+	},
+	"applinks": {
+		"details": [{
+			"appIDs": [
+				"7S8JXSF9K6.com.walli.shop",
+				"7S8JXSF9K6.com.walli.shop.apothecarium",
+				"AD4A5PPWYJ.com.terrascend.shop.web"
+			],
+			"components": [{
+					"#": "no_universal_links",
+					"exclude": true,
+					"comment": "Matches any URL with a fragment that equals no_universal_links and instructs the system not to open it as a universal link."
+				},
+				{
+					"/": "/*",
+					"comment": "Matches any URL with a path that starts with /"
+				}
+			]
+		}]
+	}
+}
